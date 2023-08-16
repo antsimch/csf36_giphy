@@ -1,0 +1,24 @@
+<div>
+    <table>
+        <tr>
+            <td>Name: </td>
+            <td>
+                <input type="text" placeholder="Enter your search item" #name>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button type="submit" (click)="onSubmit(name.value)">Search</button>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<div *ngIf="searchResults[0]">
+    <table>
+        <tr *ngFor="let result of searchResults">
+            <img [src]="result">
+        </tr>
+    </table>
+</div>
